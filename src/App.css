@@ -20,7 +20,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  animation-name: animate;
+  animation-delay: 0.5s;
+  animation-duration: 1s;
+  animation-direction: forwards;
+  animation-timing-function: ease;
+  opacity: 1;
 }
+
+@keyframes animate {
+  40% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .logo {
   color: aliceblue;
 }
@@ -42,10 +63,19 @@
   opacity: 0.9;
 
   text-align: center;
-  transition-delay: 2s;
-  transition-duration: 2s;
-  transition-property: transform;
-  transition-timing-function: ease;
+  animation-name: center;
+  animation-direction: forwards;
+  animation-duration: 1s;
+  margin-top: 10px;
+  animation-timing-function: ease;
+  opacity: 1;
+}
+
+@keyframes center {
+  100% {
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 
 .title {
@@ -90,6 +120,93 @@
 .contactBtn:active {
   top: 2px;
   box-shadow: 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+/* =======DESTINATION PAGE COMPONENT STYLING =========*/
+.mount1 {
+  background-image: url("./app/assets/mountain1.jpg");
+}
+.mount2 {
+  background-image: url("./app/assets/mountain2.jpg");
+}
+
+.mount3 {
+  background-image: url("./app/assets/mountain3.jpg");
+}
+.mount4 {
+  background-image: url("./app/assets/mountain4.jpg");
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.destination .grid li {
+  list-style: none;
+  height: 350px;
+  padding: 20px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+}
+
+.destination .grid li.small {
+  width: 30%;
+}
+
+.destination .grid li.large {
+  width: 70%;
+}
+
+hr {
+  width: 250px;
+  height: 3px;
+  background-color: #3f51b5;
+  border: 0;
+  margin: 50px auto;
+}
+.destination {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 0px;
+  width: 80%;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+.destination h3 {
+  margin: 20px auto;
+  font-size: 34px;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+.destination p {
+  font-size: 19px;
+  letter-spacing: 2px;
+  word-spacing: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .destination .grid li.small {
+    width: 50%;
+  }
+
+  .destination .grid li.large {
+    width: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  .destination .grid li.small {
+    width: 100%;
+  }
+  .destination .grid li.large {
+    width: 100%;
+  }
 }
 
 /*============ Media Query of Navbar ================*/
